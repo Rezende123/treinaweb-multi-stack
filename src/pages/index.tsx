@@ -4,6 +4,7 @@ import PageTitle from '../ui/components/data-display/PageTitle/PageTitle'
 import UseInformation from '../ui/components/data-display/UseInformation/UseInformation'
 import TextFieldMask from '../ui/components/input/TextFieldMask/TextFieldMask'
 import { Button, Typography } from '@mui/material'
+import { FormElementContainer } from '@styles/pages/index.style'
 
 const Home: NextPage = () => {
   return (
@@ -13,20 +14,22 @@ const Home: NextPage = () => {
         subtitle={"Aquele"}
         title={"Conheça os profissionais"} />
 
-      <TextFieldMask
-        mask={'99.999-999'}
-        label={'Digite seu cep'}
-        fullWidth
-        variant={'outlined'}/>
-      <Typography color={'error'}>
-        Cep inválido
-      </Typography>
-      <Button
-        variant={'contained'}
-        color={'secondary'}
-        sx={{ width: '220px' }}>
-          Buscar
-      </Button>
+      <FormElementContainer>
+        <TextFieldMask
+          mask={'99.999-999'}
+          label={'Digite seu cep'}
+          fullWidth
+          variant={'outlined'}/>
+        <Typography color={'error'}>
+          Cep inválido
+        </Typography>
+        <Button
+          variant={'contained'}
+          color={'secondary'}
+          sx={{ width: '220px' }}>
+            Buscar
+        </Button>
+      </FormElementContainer>
 
       <UseInformation
         name={'Felipe Rezende'}
