@@ -5,8 +5,11 @@ import UseInformation from '../ui/components/data-display/UseInformation/UseInfo
 import TextFieldMask from '../ui/components/input/TextFieldMask/TextFieldMask'
 import { Button, Typography, Container } from '@mui/material'
 import { FormElementContainer, ProfissionalsPaper, ProfissionalsContainer } from '@styles/pages/index.style'
+import useIndex from '../data/hooks/pages/useIndex.page';
 
 const Home: NextPage = () => {
+  const {cep, setCep} = useIndex()
+
   return (
     <div>
       <SafeEnvironment />
@@ -20,6 +23,8 @@ const Home: NextPage = () => {
             mask={'99.999-999'}
             label={'Digite seu cep'}
             fullWidth
+            value={cep}
+            onChange={(e) => setCep(e.target.value)}
             variant={'outlined'}/>
           <Typography color={'error'}>
             Cep inválido
